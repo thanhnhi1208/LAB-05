@@ -1,0 +1,283 @@
+package cam;
+
+import java.util.Scanner;
+
+public class HoaQua {
+	private String ten;
+	private double giaBan;
+	private String nguonGocXuatXu;
+	private int soLuong;
+	private int ngayNhap;
+	
+	public HoaQua(String ten, double giaBan, String nguonGocXuatXu, int soLuong, int ngayNhap) {
+		super();
+		this.ten = ten;
+		this.giaBan = giaBan;
+		this.nguonGocXuatXu = nguonGocXuatXu;
+		this.soLuong = soLuong;
+		this.ngayNhap = ngayNhap;
+	}
+	
+	public HoaQua() {
+	}
+
+	public String getTen() {
+		return ten;
+	}
+
+	public void setTen(String ten) {
+		this.ten = ten;
+	}
+
+	public double getGiaBan() {
+		return giaBan;
+	}
+
+	public void setGiaBan(double giaBan) {
+		this.giaBan = giaBan;
+	}
+
+	public String getNguonGocXuatXu() {
+		return nguonGocXuatXu;
+	}
+
+	public void setNguonGocXuatXu(String nguonGocXuatXu) {
+		this.nguonGocXuatXu = nguonGocXuatXu;
+	}
+
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+	public int getngayNhap() {
+		return ngayNhap;
+	}
+
+	public void setngayNhap(int ngayNhap) {
+		this.ngayNhap = ngayNhap;
+	}
+
+	
+	public String toString() {
+		return "HoaQua [ten=" + ten + ", giaBan=" + giaBan + ", nguonGocXuatXu=" + nguonGocXuatXu + ", soLuong="
+				+ soLuong + ", ngayNhap=" + ngayNhap + "]";
+	}
+	
+	void inTen() {
+		System.out.println("Tên : "+this.ten);
+	}
+	
+	void inGiaBan() {
+		System.out.println("Giá bán : "+this.giaBan);
+	}
+	
+	void nguonGocXuatXu() {
+		System.out.println("Nguồn gốc : "+this.nguonGocXuatXu);
+	}
+	
+	void inSoLuong() {
+		System.out.println("Số lượng : "+this.soLuong);
+	}
+	
+	void inNgayNhap() {
+		System.out.println("Ngày nhập : "+this.ngayNhap);
+	}
+	
+	void in(Scanner sc) {
+		System.out.println("tên"+this.ten);
+		System.out.println("giá bán : "+this.giaBan);
+		System.out.println("nguồn gốc xuất xứ :"+this.nguonGocXuatXu);
+		System.out.println("số lượng : "+this.soLuong);
+		System.out.println("ngày nhập : "+this.ngayNhap);
+	}
+	
+}
+
+package cam;
+
+import java.util.Scanner;
+
+public class QuaCam extends HoaQua{
+	private String color="Cam";
+	
+	public QuaCam() {
+	}
+
+	public QuaCam(String ten, double giaBan, String nguonGocXuatXu, int soLuong, int ngayNhap,String color) {
+		super(ten, giaBan, nguonGocXuatXu, soLuong, ngayNhap);
+		this.color=color;
+	}
+	
+	
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	void inMau() {
+		System.out.println("Màu : "+this.color);
+	}
+	
+	void nhap(Scanner sc) {
+
+		System.out.println("Nhập tên");
+		super.setTen(sc.nextLine());
+		System.out.println("Nhập giá bán : ");
+		super.setGiaBan(sc.nextDouble());
+		super.setNguonGocXuatXu(sc.nextLine());
+		System.out.println("Nhập ngày nhập : ");
+		super.setngayNhap(sc.nextInt());
+		System.out.println("Nhập số lượng : ");
+		super.setSoLuong(sc.nextInt());
+		System.out.println("Nhập nguồn gốc xuất xứ :");
+		super.setNguonGocXuatXu(sc.nextLine());
+		super.setNguonGocXuatXu(sc.nextLine());
+	}
+}
+
+package cam;
+
+import java.util.Scanner;
+
+public class CamCaoPhong extends QuaCam{
+
+		
+		public CamCaoPhong() {
+		}
+
+		public CamCaoPhong(String ten, double giaBan, String nguonGocXuatXu, int soLuong, int ngayNhap,String color) {
+			super(ten, giaBan, nguonGocXuatXu, soLuong, ngayNhap,color);
+		}
+		
+		void inMau() {
+			System.out.println("Màu : "+super.getColor());
+		}
+		
+		void nhap(Scanner sc) {
+			System.out.println("Nhập tên");
+			super.setTen(sc.nextLine());
+			System.out.println("Nhập giá bán : ");
+			super.setGiaBan(sc.nextDouble());
+			super.setNguonGocXuatXu(sc.nextLine());
+			System.out.println("Nhập số lượng : ");
+			super.setSoLuong(sc.nextInt());
+			System.out.println("Nhập ngày nhập : ");
+			super.setngayNhap(sc.nextInt());
+			System.out.println("Nhập nguồn gốc xuất xứ :");
+			super.setNguonGocXuatXu(sc.nextLine());
+			super.setNguonGocXuatXu(sc.nextLine());
+		}
+}
+
+package cam;
+
+import java.util.Scanner;
+
+public class QuaCamSanh extends QuaCam {
+	
+	public QuaCamSanh() {
+	}
+
+	public QuaCamSanh(String ten, double giaBan, String nguonGocXuatXu, int soLuong, int ngayNhap,String color) {
+		super(ten, giaBan, nguonGocXuatXu, soLuong, ngayNhap,color);
+	}
+	
+	void inMau() {
+		System.out.println("Màu : "+super.getColor());
+	}
+	
+	void nhap(Scanner sc) {
+		System.out.println("Nhập tên");
+		super.setTen(sc.nextLine());
+		System.out.println("Nhập giá bán : ");
+		super.setGiaBan(sc.nextDouble());
+		super.setNguonGocXuatXu(sc.nextLine());
+		System.out.println("Nhập số lượng : ");
+		super.setSoLuong(sc.nextInt());
+		System.out.println("Nhập ngày nhập : ");
+		super.setngayNhap(sc.nextInt());
+		System.out.println("Nhập nguồn gốc xuất xứ :");
+		super.setNguonGocXuatXu(sc.nextLine());
+		super.setNguonGocXuatXu(sc.nextLine());
+	}
+}
+package cam;
+
+import java.util.Scanner;
+
+public class QuaTao extends HoaQua{
+		private  String color="Đỏ";
+		
+		public QuaTao() {
+		}
+
+		public QuaTao(String ten, double giaBan, String nguonGocXuatXu, int soLuong, int ngayNhap) {
+			super(ten, giaBan, nguonGocXuatXu, soLuong, ngayNhap);
+		}
+		
+		public String getColor() {
+			return color;
+		}
+
+		public void setColor(String color) {
+			this.color = color;
+		}
+
+		void inMau() {
+			System.out.println("Màu : "+this.color);
+		}
+		
+		void nhap(Scanner sc) {
+			System.out.println("Nhập tên");
+			super.setTen(sc.nextLine());
+			System.out.println("Nhập giá bán : ");
+			super.setGiaBan(sc.nextDouble());
+			super.setNguonGocXuatXu(sc.nextLine());
+			System.out.println("Nhập số lượng : ");
+			super.setSoLuong(sc.nextInt());
+			System.out.println("Nhập ngày nhập : ");
+			super.setngayNhap(sc.nextInt());
+			System.out.println("Nhập nguồn gốc xuất xứ :");
+			super.setNguonGocXuatXu(sc.nextLine());
+			super.setNguonGocXuatXu(sc.nextLine());
+		}
+
+}
+package cam;
+
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		QuaCam qc=new QuaCam();
+		qc.nhap(sc);
+		qc.in(sc);
+		qc.inMau();
+		
+		System.out.println("");
+		QuaTao qt=new QuaTao();
+		qt.nhap(sc);
+		qt.in(sc);
+		qt.inMau();
+		
+		System.out.println("");
+		QuaCamSanh qcs=new QuaCamSanh();
+		qcs.nhap(sc);
+		qcs.in(sc);
+		qcs.inMau();
+		
+		System.out.println("");
+		CamCaoPhong qcp=new CamCaoPhong();
+		qcp.nhap(sc);
+		qcp.in(sc);
+		qcp.inMau();
+	}
+}
+
